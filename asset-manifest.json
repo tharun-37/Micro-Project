@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Micro-Project/static/css/main.1f95c254.css",
+    "main.js": "/Micro-Project/static/js/main.aeb78a54.js",
+    "static/js/453.fe917bdb.chunk.js": "/Micro-Project/static/js/453.fe917bdb.chunk.js",
+    "index.html": "/Micro-Project/index.html",
+    "main.1f95c254.css.map": "/Micro-Project/static/css/main.1f95c254.css.map",
+    "main.aeb78a54.js.map": "/Micro-Project/static/js/main.aeb78a54.js.map",
+    "453.fe917bdb.chunk.js.map": "/Micro-Project/static/js/453.fe917bdb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1f95c254.css",
+    "static/js/main.aeb78a54.js"
+  ]
+}
