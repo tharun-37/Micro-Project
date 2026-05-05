@@ -10,21 +10,17 @@ const API_URL = 'http://localhost:5000/api';
 function AdminPage() {
   const navigate = useNavigate();
   const [bookings, setBookings] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchBookings();
   }, []);
 
   const fetchBookings = async () => {
-    setLoading(true);
     try {
       const res = await axios.get(`${API_URL}/bookings`);
       setBookings(res.data);
     } catch (err) {
       console.error(err);
-    } finally {
-      setLoading(false);
     }
   };
 
