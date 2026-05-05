@@ -22,11 +22,13 @@ const RESOURCES = [
   { id: 'c2', name: 'Computer Center 2', type: 'Lab', capacity: 50, hours: 7 },
 ];
 
-app.get('/api/resources', (req, res) => {
+const router = express.Router();
+
+router.get('/resources', (req, res) => {
   res.json(RESOURCES);
 });
 
-app.get('/api/bookings', async (req, res) => {
+router.get('/bookings', async (req, res) => {
   try {
     const bookings = await Booking.find();
     res.json(bookings);
@@ -35,9 +37,9 @@ app.get('/api/bookings', async (req, res) => {
   }
 });
 
-app.post('/api/bookings', async (req, res) => {
+router.post('/bookings', async (req, res) => {
   try {
-    const newBookings = req.body; // Expect an array
+    const newBookings = req.body;
     const savedBookings = await Booking.insertMany(newBookings);
     res.status(201).json(savedBookings);
   } catch (error) {
@@ -45,7 +47,7 @@ app.post('/api/bookings', async (req, res) => {
   }
 });
 
-app.put('/api/bookings/:id/status', async (req, res) => {
+router.put('/bookings/:id/status', async (req, res) => {
   try {
     const { status } = req.body;
     const booking = await Booking.findByIdAndUpdate(req.params.id, { status }, { new: true });
@@ -55,7 +57,7 @@ app.put('/api/bookings/:id/status', async (req, res) => {
   }
 });
 
-app.delete('/api/bookings/:id', async (req, res) => {
+router.delete('/bookings/:id', async (req, res) => {
   try {
     await Booking.findByIdAndDelete(req.params.id);
     res.json({ message: 'Booking deleted' });
@@ -63,6 +65,8 @@ app.delete('/api/bookings/:id', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+app.use('/api', router);
 
 const PORT = process.env.PORT || 5000;
 if (process.env.NODE_ENV !== 'production') {
