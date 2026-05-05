@@ -5,7 +5,7 @@ import { ChevronLeft, Check, X, Calendar, Clock, Trash2, Layers } from 'lucide-r
 import { useNavigate } from 'react-router-dom';
 import './AdminPage.css';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = '/api';
 
 function AdminPage() {
   const navigate = useNavigate();

@@ -5,7 +5,7 @@ import { Calendar as CalendarIcon, Clock, Users, Building, ChevronLeft, CheckCir
 import { useNavigate } from 'react-router-dom';
 import './UserPage.css';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = '/api';
 
 function UserPage() {
   const navigate = useNavigate();
