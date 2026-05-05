@@ -6,7 +6,7 @@ import AdminPage from './pages/AdminPage';
 
 function App() {
   return (
-    <Router basename="/Micro-Project">
+    <Router >
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/user" element={<UserPage />} />
